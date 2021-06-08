@@ -1,1 +1,17 @@
 #!/bin/bash
+# autor :luis eduardo
+# descriçao : aqui esta mostrando se voce pode ou nao votar 
+echo "digite o numero 1 se voce for  nascio entre 2000 2 2005
+digite 2 se voce for nascido entre 2006 e 2010
+digite 3 se voce for nascido em 2011 para cima"
+read x
+case "$x" in
+   1) 
+    echo "voce pode votar"
+    ;;
+   2)
+    echo "voce ainda nao pode votar"
+     ;; 
+   3)
+    echo "voe ainda nao pode votar"
+esac   
