@@ -1,0 +1,11 @@
+#!/bin/bash
+#autor : luis rodrigues
+#descriçao : faz um oop com 3 nomes escolhido e fazer um loop
+vetor[0]="maria"
+vetor[1]="ana"
+vator[2]="jack"
+
+for i in ${vetor[@]}
+do  
+    echo "oi, eu sou $i"
+done    
