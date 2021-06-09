@@ -1,0 +1,13 @@
+#!/bin/bash
+#autor : luis rodrigues
+# descriçao : esta mostrando se o numero q voce colocou é ou nao acima de 0 
+echo "escolha um numero maior que 0"
+read n
+if [ $# -le 0 ]
+	then 
+	echo "escolha um numero maior que 0"
+		for n in $ (seq 1 $x )
+		do
+				echo "$n"
+		done
+fi		
