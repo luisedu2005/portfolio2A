@@ -1,0 +1,22 @@
+#!/bin/bash 
+# autor : luis rodrigues
+# descroçao : faça um algoritimo para ler o preço de 15 produtos, calcule e escreva o maior preço lido e a media aritimetica do preço dos produtos 
+clear
+i=1
+soma=0
+maior=0
+while [ $i -le 15 ]
+
+  do 
+    echo "escreva o preço dos produtos $i"
+    erad x
+    if [ $x -gt $maior ]
+      then
+     maior=$x
+     fi 
+     soma=$(($soma+$x))
+     i=$(($i+1))
+     done
+   soma=$(bc <<< "scale=4: $soma / 15 ")  
+   echo "a media dos preços é $soma"
+    echo "o produto mais caro é $maior"
