@@ -1,0 +1,18 @@
+#!/bin/bash
+#autor: luis rodrigues
+#descriçao : pedir nome ao usuario e depois fazer a soma dos nomes e quando a pessoa digitar um algoritimo nulo (em branco )
+ acaba o loop
+ 
+i=0
+nome=" "
+    echo "digite b para parar loop"
+    while [[ $nome != "b" ]]
+    do
+        echo "digite um nome"
+        read nome
+        echo "seu nome é $nome"
+        vetor[$i]=nome
+        i=$((i+1))
+    done
+    tamanhov=$((${#vetor[@]} -1))
+echo "tamanho é : $tamanhov "    
