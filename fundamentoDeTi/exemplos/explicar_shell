@@ -1,0 +1,71 @@
+1)
+#!/bin/sh
+INPUT_STRING=”oi” #dando um variavel
+while [[ $INPUT_STRING != "tchau" ]] #aplicando o loop
+do
+  echo "por favor digite algo (tchau para fechar)" #enviando uma pensagem para o leitor
+  read INPUT_STRING # pedindo uma variavel para o leitor
+  echo "voce digitou: $INPUT_STRING" # mostrando o q o leitor escreveu 
+done fechando loop
+
+
+
+2)
+#!/bin/sh
+while read input_text # comeando loop
+do
+  case $input_text in # aplicando variaveis 
+        hello)          echo English    ;; #variavel 1
+        howdy)          echo American   ;; #variavel 2
+        gday)           echo Australian ;; #variavel 3
+        bonjour)        echo French     ;; #variavel 4
+        "guten tag")    echo German     ;; #variael 5
+        *)              echo idioma desconhecido: $input_text #falando para o usuario que a variavel e inexistente
+                ;;
+   esac #terminado loop
+done ​< myfile.txt
+
+
+3)
+#!/bin/sh
+echo "por favor fale comigo..." #pedindo uma resposta do usuario
+while true #coemçando loop
+do
+  read INPUT_STRING # pedindo variavel para o usuario
+  case $INPUT_STRING in #mostrando variaveis
+	ola)
+		echo "ola voce mesmo!" # variavel 1
+		;;
+	tchau)
+		echo "See you again!" # variavel 2
+		break
+		;;
+	*)
+		echo "desculpa, nao intendo" # variavel 3
+		;;
+  	   esac
+done #terminado loop
+echo #dando um espaço
+echo "isso é tudo pessoal!" #dando mensagem final para o usuario
+
+
+
+4)
+#!/bin/bash
+echo "insira nome de usuario" #pedindo para o usuario uma informaçao
+read username #pedindo variavel 
+echo "insira sua senha" #pedindo outra informaçao para o usuario
+read password #pedindo variavel
+
+if [[ $username == "admin" && $password == "secret" ]] #falando que o nome pode ser visto e a enha nao  
+then
+        echo "usuario valido" #falando que a senha é valida
+else
+        echo "usuario invalido" #se nao senha invalida
+fi #terminado comando 
+
+
+
+
+
+
