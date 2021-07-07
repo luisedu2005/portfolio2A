@@ -1,0 +1,106 @@
+Receber uma string como argumento e informar se é um arquivo ou diretório.
+
+#!/bin/bash # Interpretador shell
+var=$(ls -ld $1) # $1 é o primeiro argumento enviado para o script
+tam=${var:0:1} # cortar a minha string / ${nome_variavel:inicio:fim}
+if [ $tam = 'd' ] # Se a var tam for = d
+then # então faça
+        echo "é diretório" #escreva “é um diretório”
+else #senão
+        echo "é arquivo" #escreva “ é arquivo”
+fi #fim
+
+_______________________________________________________________
+
+Receber como argumento o nome de um arquivo a ser criado. Antes de criar, o script deve verificar se o arquivo já existe e, em caso positivo, emitir um alerta ao usuário.
+
+Definir se o arquivo enviado existe, caso exista ele quer emitir uma alerta que já existe e caso não exista ele quer criar o arquivo.
+
+LOOP: 
+#!/bin/bash #interpretador shell
+teste=0 # cria o parâmetro teste 
+for i in $( ls ) # se listar o q tem dentro de i 
+do #faça
+        if [ $i == $1 ] #se i for igual a 1 parâmetro
+        then #então
+                teste=1 # teste é igual a 1 
+                echo "Aquivo já existe" # escreva “ o arquivo ja existe “ 
+        fi #fim do loop
+done #fim da condição 
+
+if [ $teste -eq 0 ] #se teste for igual a 0
+then #então
+        echo "Criando arquivo $1" #escreva “criando arquivo do parâmetro inserido
+        touch $1 #crie o arquivo do parâmetro inserido anteriormente 
+fi #fim da condição
+
+
+____________________________
+VETOR:
+#!/bin/bash #interpretador shell
+var=$(ls) #listar todos tudo que estiver dentro do parâmetro passado 
+var1=${var/$1} # $1 é o primeiro argumento enviado para o script e var é o que está listado dentro do parâmetro passado 
+if [[ $var != $var1 ]] # Se var for diferente de var1
+then #então faça
+	echo "O arquivo existe" # escreva “o arquivo existe”
+else #senão
+	echo "Criando o arquivo $1 ..." #escreva “Criando arquivo $1= parâmetro passado
+	touch $1 #crie o parâmetro passado
+fi #fim do código
+
+
+
+
+
+
+
+
+______________________________________________________________________
+O script deverá verificar se o login desejado já existe no sistema e emitir um alerta, caso já exista.
+
+#!/bin/bash #interpretador shell
+var=$(cat /etc/passwd | grep $1) #criar a variavel que procura nos usuários o parâmetro $1 passado
+if [ -z $var ] # -z  se a variável estiver vazia
+then #Então
+        echo "O usuário n existe no sistema" #escreva “ o usuario não existe no sistema
+else #senão
+        echo "O usuário já está cadastrado" #escreva “o usuário já esta cadastrado”
+fi #fim do código
+
+
+att 2 
+#!/bin/bash 
+var=$ ( ls *.sh)
+echo $var
+
+
+att 3 
+#!/bin/bash
+echo "digite um numero"
+read x 
+echo "digite um numero"
+read y
+if [ $x -lt $y ]
+then 
+    echo " $x é menor que $y"
+elif [ $x -gt $y ] 
+then
+    echo "$x é maior $y "
+elif [ $x -eq $y ]
+then
+    echo "$x é igual a $y"
+fi
+
+
+att4
+#!/bin/bash 
+echo "digite um numero "
+read x 
+if [ $x -lt 0 ]
+then
+  echo "$x é possitivo "
+then 
+  echo "$x é negativo"
+else 
+  echo "o numeros é nulo "
+fi   
